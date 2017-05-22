@@ -3,7 +3,7 @@ class Television(object):
         self.model = model
         self.channel = channel
         self.volume = volume
-    def chan(self, channel):
+    def chan(self):
         i = 0
         self.channel = None
         while i != 1:
@@ -13,12 +13,12 @@ class Television(object):
                 i = 1
             else:
                 print ("Такого канала не существует. Попробуйте еще раз.")
-    def vol1(self, volume):
+    def vol1(self):
         self.volume -= 1
         if self.volume < 0:
             self.volume = 0
         print ("Громкость - ", self.volume)
-    def vol2(self, volume = 5):
+    def vol2(self):
         self.volume += 1
         if self.volume > 10:
             self.volume = 10
@@ -40,11 +40,11 @@ def main():
         if choice == "Exit":
             print ("Выключение.")
         elif choice == "Channel":
-            tv.chan
+            tv.chan()
         elif choice == "Volume+":
-            tv.vol2
+            tv.vol2()
         elif choice == "Volume-":
-            tv.vol1
+            tv.vol1()
         else:
             print ("Извините, такой функции нет.")
 
